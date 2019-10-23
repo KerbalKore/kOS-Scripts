@@ -1,6 +1,6 @@
 clearscreen.
 print "Getting data...".
-run launchfunctions.
+runoncepath(LaunchData/launchfunctions).
 set tgtHeading to heading(90,90).
 lock steering to tgtHeading.
 set tgtThrot to 1.0.
