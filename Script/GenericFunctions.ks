@@ -36,9 +36,10 @@ declare global function Ascent {
 	wait until ship:velocity:surface:mag > turnStart.
 	set tgtHeading to heading(90,startPitch).
 	wait 10.
-
+	set tgtPitch to startPitch
 	until ship:apoapsis > 125000 {
-		set tgtHeading to (90,startPitch - pitchrate).
+		set tgtHeading to heading(90,tgtPitch).
+		set tgtPitch to (startPitch - pitchrate).
 		wait 1.
 	}.
 }.
