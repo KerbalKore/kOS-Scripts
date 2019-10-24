@@ -13,10 +13,9 @@ declare global function Liftoff {
 	print "Counting down:".
 	from {local countdown is 10.} until countdown = 0 step {set countdown to countdown - 1.} DO {
 		print "..." + countdown.
-		wait 1. // pauses the script here for 1 second.
+		wait 1. // pauses the script here for 1 second.	
 	}.
-	when countdown < 1 then {
-		stage.
+	when ship:status = "FLYING" then {
 		print "Liftoff of " + ship:shipname + "at" + timespan:calendar + "!".
 	}.
 }.
